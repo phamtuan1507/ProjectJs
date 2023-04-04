@@ -1,1 +1,63 @@
-<h1>HomePage</h1>
+<div class="row">
+{{#each courses }}
+  <div class="col-lg-4 col-6 pt-4">
+    <a href="/courses/{{this.slug}}" class="text-decoration-none h-100 cursor">
+      <div
+        class="box-product rounded-10 mb-2 h-100 d-flex flex-column justify-content-between bg-color-10 position-relative"
+      >
+        <div class="box-product__image rounded-top">
+          <div class="overflow-hidden ratio ratio-1x1">
+            <img class="w-100" src="{{this.thumbnail}}" alt="" />
+          </div>
+        </div>
+        <div class="pb-3 px-3 d-flex flex-column justify-content-between">
+          <div>
+            <p class="h6 color-9 p-1 pb-0 mb-0 fs-6 text-2-row fw-2">
+              {{this.name}}
+            </p>
+          </div>
+          <div class="mb-0 color-1 fw-4 pt-2 mt-1 fs-7 px-1 pb-1">
+            {{this.description}}
+          </div>
+        </div>
+        <button class="btn btn-primary">
+          Mua ngay
+        </button>
+      </div>
+    </a>
+  </div>
+  {{/each }}
+  <div class="col-sm-12">
+    <nav class="news-pagination mt-4">
+      <ul
+        class="pagination d-flex justify-content-center align-items-center mb-0"
+      >
+        <li class="page-item disabled">
+          <a class="page-link border-0 bg-transparent" href="#" tabindex="-1"><i
+              class="fa-solid fa-angle-left"
+            ></i></a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-1" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-9" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-9" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-9" href="#">4</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-9" href="#">5</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link border-0 bg-transparent color-9" href="#"><i
+              class="fa-solid fa-angle-right"
+            ></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

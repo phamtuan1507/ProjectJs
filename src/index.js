@@ -1,11 +1,17 @@
 const path = require('path');
 const express = require('express')
 const morgan = require('morgan')
-const handle = require('express-handlebars')
+const handle = require('express-handlebars');
+
+
+const db = require('./config/db')
+
+db.connect();
 
 const app = express()
 const port = 3000
 
+const route = require('./routes')
 app.use(express.static(path.join(__dirname, 'public')))
 // HTTP logger
 app.use(morgan('combined'))
@@ -18,22 +24,15 @@ app.set('view engine', 'hbs')
 // app.set('views', './views')
 app.set('views', path.join(__dirname, 'resources/views'));
 
+//trang chu, gioi thieu, lien he
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
-app.get('/tin-tuc', (req, res) => {
-  res.render('news')
-})
-app.get('/tim-kiem', (req, res) => {
-  res.render('search')
-})
-app.post('/tim-kiem', (req, res) => {
-  // console.log(req.body)
-  // console.log(req.query)
 
-  res.send('')
-})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.use(express.json());
+app.use(express.urlencoded());
+
+// route init
+route(app)
