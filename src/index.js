@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express')
 const morgan = require('morgan')
 const handle = require('express-handlebars');
-
+const methodOverride = require('method-override')
 
 const db = require('./config/db')
 
@@ -18,7 +18,11 @@ app.use(morgan('combined'))
 
 //Template engine
 app.engine('hbs', handle.engine({
-  extname: '.hbs'
+  extname: '.hbs',
+  helpers: {
+    sum: (a,b) => a + b,
+  }
+
 }))
 app.set('view engine', 'hbs')
 // app.set('views', './views')
@@ -32,7 +36,11 @@ app.listen(port, () => {
 })
 
 app.use(express.json());
+
+app.use(methodOverride('_method'))
+
 app.use(express.urlencoded());
+
 
 // route init
 route(app)

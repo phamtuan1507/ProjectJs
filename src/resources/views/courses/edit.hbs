@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>Sửa khoá học</h1>
+    <form method="POST" action="/courses/{{courses._id}}?_method=PUT">
+        <div class="mb-3">
+            <label for="name" class="form-label">Tên khoá học</label>
+            <input type="text" class="form-control" value="{{courses.name}}" id="name" name="name" />
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea">
+                {{courses.description}}
+            </textarea>
+            <label for="floatingTextarea">Mô tả</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Lưu lại</button>
+    </form>
+</div>

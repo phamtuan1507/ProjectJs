@@ -1,19 +1,23 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm d-flex">
   <div class="container justify-content-between">
-    <div class="d-flex">
-      <a class="navbar-brand" href="#">
+    <div class="d-flex w-100">
+      <a class="navbar-brand" href="/">
         <img width="120px" src="/images/logo1.jpg" alt="" />
       </a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sản phẩm</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Tin tức</a>
+      <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tuân
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/courses/create">Đăng khoá học</a></li>
+              <li><a class="dropdown-item" href="/me/stored/courses">Khoá học của tôi</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -29,7 +33,7 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header shadow-sm">
     <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-       <img width="120px" src="/images/logo1.jpg" alt="" />
+      <img width="120px" src="/images/logo1.jpg" alt="" />
     </h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
